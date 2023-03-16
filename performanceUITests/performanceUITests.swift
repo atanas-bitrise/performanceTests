@@ -31,18 +31,18 @@ class performanceUITests: XCTestCase {
     
     func testButton() throws {
         app.buttons["Button"].tap()
-        wait(duration: 2.001)
+        wait(duration: 0.001)
         XCTAssert(app.staticTexts["Top"].exists)
     }
     
     func testDismiss() throws {
         XCTAssert(app.staticTexts["Hello World"].exists)
         app.buttons["Button"].tap()
-        wait(duration: 2.001)
+        wait(duration: 0.001)
         XCTAssert(app.staticTexts["Top"].exists)
-        wait(duration: 2.001)
+        wait(duration: 0.001)
         app.buttons["Dismiss"].tap()
-        wait(duration: 2.001)
+        wait(duration: 0.001)
         XCTAssert(app.staticTexts["Hello World"].isHittable)
         app.terminate()
     }
