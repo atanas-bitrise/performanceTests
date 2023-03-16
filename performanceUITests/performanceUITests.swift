@@ -47,27 +47,38 @@ class performanceUITests: XCTestCase {
         app.terminate()
     }
     
-//    func testL1() throws { try testLaunch() }
-//    func testL2() throws { try testLaunch() }
-//    func testL3() throws { try testLaunch() }
-//    func testL4() throws { try testLaunch() }
-//    func testL5() throws { try testLaunch() }
-//    func testL6() throws { try testLaunch() }
-//    func testL7() throws { try testLaunch() }
-//    func testL8() throws { try testLaunch() }
-//    func testL9() throws { try testLaunch() }
-//    func testL10() throws { try testLaunch() }
-//
-//    func testB1() throws { try testButton() }
-//    func testB2() throws { try testButton() }
-//    func testB3() throws { try testButton() }
-//    func testB4() throws { try testButton() }
-//    func testB5() throws { try testButton() }
-//    func testB6() throws { try testButton() }
-//    func testB7() throws { try testButton() }
-//    func testB8() throws { try testButton() }
-//    func testB9() throws { try testButton() }
-//    func testB10() throws { try testButton() }
+    func testL1() throws { try testLaunch() }
+    func testL2() throws { try testLaunch() }
+    func testL3() throws { try testLaunch() }
+    func testL4() throws { try testLaunch() }
+    func testL5() throws { try testLaunch() }
+    func testL6() throws { try testLaunch() }
+    func testL7() throws { try testLaunch() }
+    func testL8() throws { try testLaunch() }
+    func testL9() throws { try testLaunch() }
+    func testL10() throws { try testLaunch() }
+
+    func testB1() throws { try testButton() }
+    func testB2() throws { try testButton() }
+    func testB3() throws { try testButton() }
+    func testB4() throws { try testButton() }
+    func testB5() throws { try testButton() }
+    func testB6() throws { try testButton() }
+    func testB7() throws { try testButton() }
+    func testB8() throws { try testButton() }
+    func testB9() throws { try testButton() }
+    func testB10() throws { try testButton() }
+    
+    func testD1() throws { try testDismiss() }
+    func testD2() throws { try testDismiss() }
+    func testD3() throws { try testDismiss() }
+    func testD4() throws { try testDismiss() }
+    func testD5() throws { try testDismiss() }
+    func testD6() throws { try testDismiss() }
+    func testD7() throws { try testDismiss() }
+    func testD8() throws { try testDismiss() }
+    func testD9() throws { try testDismiss() }
+    func testD10() throws { try testDismiss() }
     
     func wait(duration: TimeInterval) {
         let expectation = XCTestExpectation(description: "wait")
@@ -75,14 +86,5 @@ class performanceUITests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: duration)
-    }
-
-    func testLaunchPerformance() throws {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTApplicationLaunchMetric()]) {
-//                XCUIApplication().launch()
-//            }
-//        }
     }
 }
