@@ -14,46 +14,34 @@ class performanceUITests: XCTestCase {
     }()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        app.terminate()
     }
 
-//    func testLaunch() throws {
-//        let app = XCUIApplication()
-//        app.launch()
-//        XCTAssert(app.staticTexts["Hello World"].exists)
-//        app.terminate()
-//    }
+    func testLaunch() throws {
+        XCTAssert(app.staticTexts["Hello World"].exists)
+    }
     
-//    func testButton() throws {
-//        let app = XCUIApplication()
-//        app.launch()
-//        app.buttons["Button"].tap()
-//        wait(duration: 0.001)
-//        XCTAssert(app.staticTexts["Top"].exists)
-//        app.terminate()
-//    }
+    func testButton() throws {
+        app.buttons["Button"].tap()
+        wait(duration: 2.001)
+        XCTAssert(app.staticTexts["Top"].exists)
+    }
     
     func testDismiss() throws {
-//        let app = XCUIApplication()
-//        app.launch()
-//        XCTAssert(app.staticTexts["Hello World"].exists)
+        XCTAssert(app.staticTexts["Hello World"].exists)
         app.buttons["Button"].tap()
-        // wait(duration: 0.001)
         wait(duration: 2.001)
         XCTAssert(app.staticTexts["Top"].exists)
         wait(duration: 2.001)
-        // app.tables.element(boundBy: 0).swipeDown(velocity: XCUIGestureVelocity.fast)
-        app.buttons["Back"].tap()
-//        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.buttons["Dismiss"].tap()
         wait(duration: 2.001)
         XCTAssert(app.staticTexts["Hello World"].isHittable)
         app.terminate()
